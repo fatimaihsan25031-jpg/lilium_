@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lilium | Premium Modest Fashion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --soft-beige: #F4F0EB;
+            --matte-maroon: #5D2E35;
+            --silk-cream: #FAF7F2;
+            --warm-taupe: #9C8B7C;
+            --dark-text: #2C2A29;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--soft-beige);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .brand-logo {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Top Bar */
+        .announcement-bar {
+            background-color: var(--matte-maroon);
+            color: var(--silk-cream);
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--soft-beige);
+            border-bottom: 1px solid rgba(156, 139, 124, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .brand-logo {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--matte-maroon);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: lowercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--matte-maroon);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-icons a {
+            color: var(--matte-maroon);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background-color: var(--silk-cream);
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 1px solid rgba(156, 139, 124, 0.15);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--matte-maroon);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: var(--warm-taupe);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Shop Sections Grid */
+        .categories-section {
+            max-width: 1300px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        } 
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            color: var(--matte-maroon);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--warm-taupe);
+            font-size: 0.95rem;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: var(--silk-cream);
+            border-radius: 4px;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--dark-text);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(93, 46, 53, 0.1);
+        }
+
+        .category-image {
+            height: 450px;
+            background-color: #EAE5DF;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .category-info {
+            padding: 22px 18px;
+            text-align: center;
+            background-color: var(--silk-cream);
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            color: var(--matte-maroon);
+            margin-bottom: 6px;
+        }
+
+        .category-subtitle {
+            font-size: 0.78rem;
+            color: var(--warm-taupe);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .category-price {
+            font-weight: 600;
+            color: var(--matte-maroon);
+            font-size: 1.05rem;
+        }
+
+        /* Modal Details */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 42, 41, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 200;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--silk-cream);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 6px;
+            position: relative;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.8rem;
+            color: var(--matte-maroon);
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .product-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .modal-img-container {
+            height: 420px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .modal-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-info h2 {
+            font-size: 2.2rem;
+            color: var(--matte-maroon);
+            margin-bottom: 10px;
+        }
+
+        .modal-info .modal-price {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 15px;
+        }
+
+        .modal-info .modal-desc {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            background-color: var(--matte-maroon);
+            color: var(--silk-cream);
+            padding: 14px;
+            border: none;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .btn-add-cart:hover {
+            background-color: #452127;
+        }
+
+        .suggestions-title {
+            font-size: 1.3rem;
+            color: var(--matte-maroon);
+            margin-bottom: 15px;
+            border-top: 1px solid rgba(156, 139, 124, 0.2);
+            padding-top: 20px;
+        }
+
+        .suggestions-grid {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .suggest-card {
+            width: 120px;
+            flex-shrink: 0;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .suggest-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .suggest-card p {
+            font-size: 0.75rem;
+            color: var(--matte-maroon);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        /* Cart Drawer */
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 400px;
+            height: 100%;
+            background-color: var(--soft-beige);
+            box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+            z-index: 300;
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+        }
+
+        .cart-drawer.open {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(156, 139, 124, 0.2);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cart-header h3 {
+            font-size: 1.8rem;
+            color: var(--matte-maroon);
+        }
+
+        .close-cart {
+            border: none;
+            background: none;
+            font-size: 1.5rem;
+            color: var(--matte-maroon);
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 15px;
+            background: var(--silk-cream);
+            padding: 12px;
+            border-radius: 4px;
+            align-items: center;
+        }
+
+        .cart-item img {
+            width: 60px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-size: 0.95rem;
+            color: var(--matte-maroon);
+            font-weight: 600;
+        }
+
+        .cart-item-price {
+            font-size: 0.85rem;
+            color: var(--dark-text);
+        }
+
+        .remove-item {
+            color: #b00;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            margin-top: 5px;
+        }
+
+        .cart-footer {
+            border-top: 1px solid rgba(156, 139, 124, 0.2);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--matte-maroon);
+            margin-bottom: 20px;
+        }
+
+        .btn-checkout {
+            width: 100%;
+            background-color: var(--matte-maroon);
+            color: var(--silk-cream);
+            padding: 14px;
+            border: none;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-checkout:hover {
+            background-color: #452127;
+        }
+
+        /* Story Section */
+        .story-section {
+            background-color: var(--silk-cream);
+            padding: 90px 40px;
+            border-top: 1px solid rgba(156, 139, 124, 0.15);
+            border-bottom: 1px solid rgba(156, 139, 124, 0.15);
+        }
+
+        .story-container {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-container h2 {
+            font-size: 2.8rem;
+            color: var(--matte-maroon);
+            margin-bottom: 25px;
+        }
+
+        .story-container p {
+            font-size: 1.05rem;
+            color: var(--dark-text);
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .story-highlight {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--warm-taupe);
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--matte-maroon);
+            color: var(--silk-cream);
+            padding: 70px 40px 30px;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--soft-beige);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--silk-cream);
+            text-decoration: none;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icon-btn {
+            width: 42px;
+            height: 42px;
+            background-color: rgba(250, 247, 242, 0.1);
+            border: 1px solid rgba(250, 247, 242, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--silk-cream);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon-btn:hover {
+            background-color: var(--soft-beige);
+            color: var(--matte-maroon);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(250, 247, 242, 0.15);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .product-details-grid {
+                grid-template-columns: 1fr;
+            }
+            .cart-drawer {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="announcement-bar">
+        Complimentary Shipping Across Iraq On Orders Over 150,000 IQD
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#suits">Suits & Tailoring</a></li>
+                    <li><a href="#dresses">Modest Dresses</a></li>
+                    <li><a href="#our-story">Our Story</a></li>
+                </ul>
+            </nav>
+            
+            <a href="#" class="brand-logo">lilium</a>
+
+            <div class="nav-icons">
+                <a href="#">SEARCH</a>
+                <a href="#">ACCOUNT</a>
+                <a onclick="toggleCart()">BAG (<span id="cart-count">0</span>)</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Modest Luxury & Timeless Elegance</h1>
+        <p>Discover the Premium Smart Casual Collection</p>
+    </section>
+
+    <!-- Suits & Tailored Sets Section -->
+    <section class="categories-section" id="suits">
+        <div class="section-header">
+            <h2>Suits & Tailored Sets</h2>
+            <p>Structured, Flowing & Modest Tailored Outfits</p>
+        </div>
+
+        <div class="categories-grid">
+            <div class="category-card" onclick="openProductModal('suit1')">
+                <div class="category-image">
+                    <img src="./assets/images/photo_6_2026-11-06_18-38-32.jpg" alt="Taupe Tailored Suit">
+                </div>
+                <div class="category-info">
+                    <h3 class="category-title">Taupe Peplum Suit</h3>
+                    <p class="category-subtitle">Structured / Smart Casual</p>
+                    <p class="category-price">45,000 IQD</p>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openProductModal('suit2')">
+                <div class="category-image">
+                    <img src="./assets/images/photo_5_2026-11-06_18-38-32.jpg" alt="Ivory Silk Tailored Suit">
+                </div>
+                <div class="category-info">
+                    <h3 class="category-title">Ivory Tailored Silhouette</h3>
+                    <p class="category-subtitle">Modest Luxury / Signature</p>
+                    <p class="category-price">50,000 IQD</p>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openProductModal('suit3')">
+                <div class="category-image">
+                    <img src="./assets/images/photo_10_2026-11-06_18-38-32.jpg" alt="Linen Beige Asymmetric Set">
+                </div>
+                <div class="category-info">
+                    <h3 class="category-title">Minimalist Linen Set</h3>
+                    <p class="category-subtitle">Soft Beige / Asymmetric Cut</p>
+                    <p class="category-price">45,000 IQD</p>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openProductModal('suit4')">
+                <div class="category-image">
+                    <img src="./assets/images/photo_11_2026-11-06_18-38-32.jpg" alt="Navy Belted High-Neck Suit">
+                </div>
+                <div class="category-info">
+                    <h3 class="category-title">Midnight Navy Belted Suit</h3>
+                    <p class="category-subtitle">High-Neck / Tailored Set</p>
+                    <p class="category-price">50,000 IQD</p>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openProductModal('suit5')">
+                <div class="category-image">
+                    <img src="./assets/images/photo_8_2026-11-06_18-38-32.jpg" alt="Olive Green Linen Co-ord">
+                </div>
+                <div class="category-info">
+                    <h3 class="category-title">Olive Linen Cinched Suit</h3>
+                    <p class="category-subtitle">Pleated Waist / Modern Cut</p>
+                    <p class="category-price">45,000 IQD</p>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openProductModal('suit6')">
+                <div class="category-image">
+                    <img src="./assets/images/photo_4_2026-11-06_18-38-32.jpg" alt="Taupe Cape Tailored Suit">
+                </div>
+                <div class="category-info">
+                    <h3 class="category-title">The Royal Cape Ensemble</h3>
+                    <p class="category-subtitle">Official Modest Luxury Cape</p>
+                    <p class="category-price">125,000 IQD</p>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openProductModal('suit7')">
+                <div class="category-image">
+                    <img src="./assets/images/photo_7_2026-11-06_18-38-32.jpg" alt="Pinstripe Asymmetric Suit">
+                </div>
+                <div class="category-info">
+                    <h3 class="category-title">Espresso Pinstripe Set</h3>
+                    <p class="category-subtitle">Layered Asymmetric Blazer</p>
+                    <p class="category-price">50,000 IQD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modest Dresses Section -->
+    <section class="categories-section" id="dresses">
+        <div class="section-header">
+            <h2>Modest Dresses</h2>
+            <p>Refined, Graceful & High-Neck Gowns</p>
+        </div>
+
+        <div class="categories-grid">
+            <div class="category-card" onclick="openProductModal('dress_white')">
+                <div class="category-image">
+                    <img src="./assets/images/photo_3_2026-11-06_18-38-32.jpg" alt="Ivory High-Neck Modest Dress">
+                </div>
+                <div class="category-info">
+                    <h3 class="category-title">The Ivory Silk Gown</h3>
+                    <p class="category-subtitle">High-Neck / Bishop Sleeves</p>
+                    <p class="category-price">50,000 IQD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Modal -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeProductModal()">&times;</button>
+            <div class="product-details-grid">
+                <div class="modal-img-container">
+                    <img id="modal-img" src="" alt="Product">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title">Product Title</h2>
+                    <p class="modal-price" id="modal-price">0 IQD</p>
+                    <p class="modal-desc" id="modal-desc">Detailed product description...</p>
+                    <button class="btn-add-cart" id="modal-add-btn">Add To Bag</button>
+
+                    <h4 class="suggestions-title">Complete The Look</h4>
+                    <div class="suggestions-grid" id="modal-suggestions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Drawer Side Panel -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Bag</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+
+        <div class="cart-items" id="cart-items-container"></div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">0 IQD</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">Proceed To Checkout</button>
+        </div>
+    </div>
+
+    <!-- Story Section -->
+    <section class="story-section" id="our-story">
+        <div class="story-container">
+            <h2>Our Story</h2>
+            <p>At <strong>lilium</strong>, we believe true luxury lies in subtlety and grace. Inspired by the quiet strength of the Lily flower, our label was established to redefine modern women's fashion through the art of <em>Modest Luxury</em>.</p>
+            <p>Each garment is meticulously crafted with soft, premium textiles, relaxed smart casual silhouettes, and timeless tailoring—empowering women to express confidence without compromising modesty.</p>
+            <div class="story-highlight">"Elegance is not about being noticed, it is about being remembered."</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>lilium</h4>
+                <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 15px;">Premium Fashion & Modest Luxury crafted for the modern woman.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/lilium_.1?exln=MTFheXZxbnRlN3psdQ==" target="_blank" class="social-icon-btn" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/lilium_.1" target="_blank" class="social-icon-btn" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/lilium" target="_blank" class="social-icon-btn" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Shop Collections</h4>
+                <ul>
+                    <li><a href="#suits">Suits & Tailoring</a></li>
+                    <li><a href="#dresses">Modest Dresses</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Client Care</h4>
+                <ul>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Contact Support</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 6px;"><i class="fas fa-envelope"></i> lilium.official1@gmail.com</p>
+                <p style="font-size: 0.85rem; opacity: 0.8;"><i class="fas fa-phone-alt"></i> 07715486728</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2026 lilium. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Interactive Logic -->
+    <script>
+        const products = {
+            'suit1': {
+                id: 'suit1',
+                title: 'Taupe Peplum Suit',
+                price: 45000,
+                priceText: '45,000 IQD',
+                image: './assets/images/photo_6_2026-11-06_18-38-32.jpg',
+                desc: 'طقم سمارت كاجوال مريح باللون البيجي التوب المميز. يتكون من جاكيت بخصر بيبلوم محدد بأزرار مزدوجة مع أكمام واسعة منسدلة وبنطال واسع، مصنوع من أقمشة ناعمة تمنحك إطلالة راقية في العمل واللقاءات اليومية.',
+                suggested: ['suit2', 'suit3']
+            },
+            'suit2': {
+                id: 'suit2',
+                title: 'Ivory Tailored Silhouette',
+                price: 50000,
+                priceText: '50,000 IQD',
+                image: './assets/images/photo_5_2026-11-06_18-38-32.jpg',
+                desc: 'بدلة رسمية فاخرة باللون الأبيض العاجي المشرق. تتميز بليزر مخصر بعناية لإبراز الأناقة بأسلوب محتشم، مع أكمام ذات ثنيات ناعمة وبنطال واسع انسيابي للغاية.',
+                suggested: ['dress_white', 'suit6']
+            },
+            'suit3': {
+                id: 'suit3',
+                title: 'Minimalist Linen Set',
+                price: 45000,
+                priceText: '45,000 IQD',
+                image: './assets/images/photo_10_2026-11-06_18-38-32.jpg',
+                desc: 'طقم كتان باللون البيجي الفاتح بتصميم مينيماليست حديث. القميص بقصة غير متماثلة من الأسفل مع أكمام درابيه واسعة توفر أقصى درجات الراحة مع الفخامة الهادئة.',
+                suggested: ['suit1', 'suit5']
+            },
+            'suit4': {
+                id: 'suit4',
+                title: 'Midnight Navy Belted Suit',
+                price: 50000,
+                priceText: '50,000 IQD',
+                image: './assets/images/photo_11_2026-11-06_18-38-32.jpg',
+                desc: 'طقم محتشم فخم باللون الكحلي الداكن. يأتي بياقة عالية دافئة وحزام قماشي أنيق للخصر مع بنطال متناسق ليعطي طابعاً ملوكياً عصرياً.',
+                suggested: ['suit7', 'suit6']
+            },
+            'suit5': {
+                id: 'suit5',
+                title: 'Olive Linen Cinched Suit',
+                price: 45000,
+                priceText: '45,000 IQD',
+                image: './assets/images/photo_8_2026-11-06_18-38-32.jpg',
+                desc: 'طقم كتان فاخر باللون الزيتي الملكي. القميص مصمم بياقة كلاسيكية وخصر مكسر ومحدد بحزام جانبي، يعكس روح الـ Smart Casual الراقية.',
+                suggested: ['suit3', 'suit1']
+            },
+            'suit6': {
+                id: 'suit6',
+                title: 'The Royal Cape Ensemble',
+                price: 125000,
+                priceText: '125,000 IQD',
+                image: './assets/images/photo_4_2026-11-06_18-38-32.jpg',
+                desc: 'القطعة الرسمية الأفخم في المجموعة. تصميم مميز يتضمن كاب (Cape) ملكي منسدل على الكتفين بأسلوب فاخر يغنيكِ عن أي تفاصيل أخرى، مصمم بأعلى درجات الدقة والاتقان للمناسبات الخاصة.',
+                suggested: ['suit2', 'dress_white']
+            },
+            'suit7': {
+                id: 'suit7',
+                title: 'Espresso Pinstripe Set',
+                price: 50000,
+                priceText: '50,000 IQD',
+                image: './assets/images/photo_7_2026-11-06_18-38-32.jpg',
+                desc: 'طقم عمل رسمي باللون البني الداكن (إسبريسو) مقلم بخطوط بيضاء رفيعة. يتميز بكتف طبقات منسدلة بأسلوب غير متماثل يمنحك حضوراً قوياً ومميزاً.',
+                suggested: ['suit4', 'suit2']
+            },
+            'dress_white': {
+                id: 'dress_white',
+                title: 'The Ivory Silk Gown',
+                price: 50000,
+                priceText: '50,000 IQD',
+                image: './assets/images/photo_3_2026-11-06_18-38-32.jpg',
+                desc: 'فستان ماكسي فخم باللون الأبيض العاجي. مصمم بياقة عالية ثابتة وأكمام واسعة مغلقة عند المعصم، ينسدل بنعومة ليمنحك مظهر الفخامة المحتشمة المطلقة.',
+                suggested: ['suit6', 'suit2']
+            }
+        };
+
+        let cart = [];
+
+        function openProductModal(productId) {
+            const product = products[productId];
+            if (!product) return;
+
+            document.getElementById('modal-img').src = product.image;
+            document.getElementById('modal-title').innerText = product.title;
+            document.getElementById('modal-price').innerText = product.priceText;
+            document.getElementById('modal-desc').innerText = product.desc;
+
+            const addBtn = document.getElementById('modal-add-btn');
+            addBtn.onclick = function() {
+                addToCart(product.id);
+                closeProductModal();
+            };
+
+            const suggestContainer = document.getElementById('modal-suggestions');
+            suggestContainer.innerHTML = '';
+            product.suggested.forEach(sId => {
+                const item = products[sId];
+                if (item) {
+                    const card = document.createElement('div');
+                    card.className = 'suggest-card';
+                    card.onclick = (e) => {
+                        e.stopPropagation();
+                        openProductModal(sId);
+                    };
+                    card.innerHTML = `
+                        <img src="${item.image}" alt="${item.title}">
+                        <p>${item.title}</p>
+                    `;
+                    suggestContainer.appendChild(card);
+                }
+            });
+
+            document.getElementById('product-modal').style.display = 'flex';
+        }
+
+        function closeProductModal() {
+            document.getElementById('product-modal').style.display = 'none';
+        }
+
+        function toggleCart() {
+            document.getElementById('cart-drawer').classList.toggle('open');
+        }
+
+        function addToCart(productId) {
+            const product = products[productId];
+            if (product) {
+                cart.push(product);
+                updateCartUI();
+                toggleCart();
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            document.getElementById('cart-count').innerText = cart.length;
+            const container = document.getElementById('cart-items-container');
+            container.innerHTML = '';
+
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">${item.title}</div>
+                        <div class="cart-item-price">${item.priceText}</div>
+                        <button class="remove-item" onclick="removeFromCart(${index})">Remove</button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+
+            document.getElementById('cart-total-price').innerText = total.toLocaleString() + ' IQD';
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("سلتك فارغة حالياً!");
+                return;
+            }
+            alert("شكراً لطلبك من lilium! سيتم التواصل معك لتأكيد الشحن والدفع عند الاستلام.");
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('product-modal');
+            if (event.target == modal) {
+                closeProductModal();
+            }
+        }
+    </script>
+</body>
+</html>
